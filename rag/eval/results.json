@@ -1,0 +1,250 @@
+{
+  "summary": {
+    "k": 5,
+    "n_questions": 8,
+    "embed_model": "hashing-tfidf-offline-v1",
+    "embed_dim": 384,
+    "retrieval": {
+      "recall_at_k_hit_rate": 0.7142857142857143,
+      "mrr": 0.511904761904762,
+      "ndcg_at_k": 0.5615252225819133,
+      "context_precision": 0.14285714285714285
+    },
+    "answer": {
+      "faithfulness_mean": 1.0,
+      "relevance_mean": 0.13387521265214494,
+      "em_mean": 0.0,
+      "f1_mean": 0.06443614543471507,
+      "no_context_handling_accuracy": 0.0
+    },
+    "latency_ms": {
+      "p50": 0.6635000000017044,
+      "p95": 2.1642159999970545,
+      "mean": 0.8048108750013938
+    }
+  },
+  "per_query": [
+    {
+      "id": "q1",
+      "question": "What encryption algorithm does Aster use for objects at rest by default?",
+      "k": 5,
+      "retrieved_ids": [
+        "5dcc7d28216392e4dcd37c33",
+        "49143dab6e2f659e7c3c98ca",
+        "1525684ffd16e574913de63e",
+        "04fe5c88e23c6e6174f82834",
+        "d54cc8808ce5e51191a742d8"
+      ],
+      "relevant_ids": [
+        "5dcc7d28216392e4dcd37c33"
+      ],
+      "hit": 1.0,
+      "rr": 1.0,
+      "ndcg": 1.0,
+      "context_precision": 0.2,
+      "answer": "## Encryption All objects are encrypted at rest using AES-256 by default; no configuration is required. [03_security.md#0] ## Objects not appearing in LIST results immediately Aster is strongly consistent for new object writes as of the 2024 storage engine, so a PUT followed immediately by a LIST should reflect the new object. [05_troubleshooting.md#0] ## Core Concepts A **bucket** is the top-level container for objects. [01_overview.md#0]",
+      "grounded": true,
+      "expected_no_context": false,
+      "faithfulness": 1.0,
+      "relevance": 0.15384615384615385,
+      "em": 0.0,
+      "f1": 0.031746031746031744,
+      "latency_ms": 2.164,
+      "token_usage_estimate": 1261
+    },
+    {
+      "id": "q2",
+      "question": "How much does Infrequent Access storage cost per GB per month?",
+      "k": 5,
+      "retrieved_ids": [
+        "1525684ffd16e574913de63e",
+        "d54cc8808ce5e51191a742d8",
+        "5dcc7d28216392e4dcd37c33",
+        "04fe5c88e23c6e6174f82834",
+        "49143dab6e2f659e7c3c98ca"
+      ],
+      "relevant_ids": [
+        "1525684ffd16e574913de63e"
+      ],
+      "hit": 1.0,
+      "rr": 1.0,
+      "ndcg": 1.0,
+      "context_precision": 0.2,
+      "answer": "# Aster Cloud Storage \u2014 Pricing ## Storage Pricing (per GB / month) | Storage class | Price | |---|---| | Standard | $0.023 | | Infrequent Access | $0.0125 | | Archive | $0.0036 | ## Request Pricing PUT, COPY, POST, LIST requests cost $0.005 per 1,000 requests. [02_pricing.md#0] - **Infrequent Access (IA)** \u2014 for data accessed less than once a month, ~45% cheaper per GB than Standard, with a retrieval fee. [01_overview.md#0] ## Storage Classes Aster offers three storage classes: - **Standard** \u2014 for frequently accessed data, lowest latency, highest per-GB price. [01_overview.md#0]",
+      "grounded": true,
+      "expected_no_context": false,
+      "faithfulness": 1.0,
+      "relevance": 0.1346153846153846,
+      "em": 0.0,
+      "f1": 0.125,
+      "latency_ms": 0.9,
+      "token_usage_estimate": 1300
+    },
+    {
+      "id": "q3",
+      "question": "What is the maximum number of parts allowed in a multipart upload?",
+      "k": 5,
+      "retrieved_ids": [
+        "49143dab6e2f659e7c3c98ca",
+        "27656b8ddbf9a68f4e1e77d7",
+        "04fe5c88e23c6e6174f82834",
+        "5dcc7d28216392e4dcd37c33",
+        "1525684ffd16e574913de63e"
+      ],
+      "relevant_ids": [
+        "04fe5c88e23c6e6174f82834"
+      ],
+      "hit": 1.0,
+      "rr": 0.3333333333333333,
+      "ndcg": 0.5,
+      "context_precision": 0.2,
+      "answer": "Switch to the multipart upload API and upload parts in parallel (4-8 concurrent parts is a good default) to use available bandwidth. [05_troubleshooting.md#0] Maximum single-request upload size is 5 GB. [04_api_reference.md#0] in LIST results immediately Aster is strongly consistent for new object writes as of the 2024 storage engine, so a PUT followed immediately by a LIST should reflect the new object. [05_troubleshooting.md#1]",
+      "grounded": true,
+      "expected_no_context": false,
+      "faithfulness": 1.0,
+      "relevance": 0.17647058823529413,
+      "em": 0.0,
+      "f1": 0.03076923076923077,
+      "latency_ms": 0.664,
+      "token_usage_estimate": 1095
+    },
+    {
+      "id": "q4",
+      "question": "What should I check if I get a SignatureDoesNotMatch error?",
+      "k": 5,
+      "retrieved_ids": [
+        "27656b8ddbf9a68f4e1e77d7",
+        "04fe5c88e23c6e6174f82834",
+        "86048fe233510cf5ad984541",
+        "49143dab6e2f659e7c3c98ca",
+        "5dcc7d28216392e4dcd37c33"
+      ],
+      "relevant_ids": [
+        "49143dab6e2f659e7c3c98ca"
+      ],
+      "hit": 1.0,
+      "rr": 0.25,
+      "ndcg": 0.43067655807339306,
+      "context_precision": 0.2,
+      "answer": "Exceeding the limit returns a 503 SlowDown error; clients should retry with exponential backoff. [04_api_reference.md#0] If an object is missing, check that the request [05_troubleshooting.md#0] ## Listing Objects `GET /{bucket}?prefix=&max-keys=` lists objects in a bucket. [04_api_reference.md#0]",
+      "grounded": true,
+      "expected_no_context": false,
+      "faithfulness": 1.0,
+      "relevance": 0.17647058823529413,
+      "em": 0.0,
+      "f1": 0.0784313725490196,
+      "latency_ms": 0.495,
+      "token_usage_estimate": 939
+    },
+    {
+      "id": "q5",
+      "question": "How many storage classes does Aster offer and what are they?",
+      "k": 5,
+      "retrieved_ids": [
+        "d54cc8808ce5e51191a742d8",
+        "1525684ffd16e574913de63e",
+        "49143dab6e2f659e7c3c98ca",
+        "5dcc7d28216392e4dcd37c33",
+        "27656b8ddbf9a68f4e1e77d7"
+      ],
+      "relevant_ids": [
+        "e93c905813e6685d545ae978"
+      ],
+      "hit": 0.0,
+      "rr": 0.0,
+      "ndcg": 0.0,
+      "context_precision": 0.0,
+      "answer": "## Storage Classes Aster offers three storage classes: - **Standard** \u2014 for frequently accessed data, lowest latency, highest per-GB price. [01_overview.md#0] # Aster Cloud Storage \u2014 Product Overview Aster Cloud Storage is an object storage service for storing and retrieving files of any size. [01_overview.md#0] ## Billing Cycle Bills are calculated daily and invoiced monthly in arrears. [02_pricing.md#0]",
+      "grounded": true,
+      "expected_no_context": false,
+      "faithfulness": 1.0,
+      "relevance": 0.10416666666666667,
+      "em": 0.0,
+      "f1": 0.09999999999999999,
+      "latency_ms": 0.501,
+      "token_usage_estimate": 1094
+    },
+    {
+      "id": "q6",
+      "question": "What is the per-bucket PUT request rate limit?",
+      "k": 5,
+      "retrieved_ids": [
+        "04fe5c88e23c6e6174f82834",
+        "49143dab6e2f659e7c3c98ca",
+        "5dcc7d28216392e4dcd37c33",
+        "1525684ffd16e574913de63e",
+        "27656b8ddbf9a68f4e1e77d7"
+      ],
+      "relevant_ids": [
+        "5d59e9f6048b274ecf205e84"
+      ],
+      "hit": 0.0,
+      "rr": 0.0,
+      "ndcg": 0.0,
+      "context_precision": 0.0,
+      "answer": "## 503 SlowDown errors These indicate the per-prefix request-rate limit was exceeded. [05_troubleshooting.md#0] If an object is missing, check that the request [05_troubleshooting.md#0] ## Bucket Policies Access to a bucket is controlled by a JSON policy attached to the bucket, plus optional per-object ACLs. [03_security.md#0]",
+      "grounded": true,
+      "expected_no_context": false,
+      "faithfulness": 1.0,
+      "relevance": 0.10256410256410256,
+      "em": 0.0,
+      "f1": 0.0,
+      "latency_ms": 0.776,
+      "token_usage_estimate": 1066
+    },
+    {
+      "id": "q7",
+      "question": "How long are old access keys valid after rotation?",
+      "k": 5,
+      "retrieved_ids": [
+        "5dcc7d28216392e4dcd37c33",
+        "49143dab6e2f659e7c3c98ca",
+        "86048fe233510cf5ad984541",
+        "d54cc8808ce5e51191a742d8",
+        "27656b8ddbf9a68f4e1e77d7"
+      ],
+      "relevant_ids": [
+        "5dcc7d28216392e4dcd37c33"
+      ],
+      "hit": 1.0,
+      "rr": 1.0,
+      "ndcg": 1.0,
+      "context_precision": 0.2,
+      "answer": "Keys can be rotated from the console at any time; old keys remain valid for 24 hours after rotation to avoid downtime. [03_security.md#0] Tags are searchable through the metadata filter API. [01_overview.md#0] - **Archive** \u2014 for long-term retention, cheapest per-GB price, retrieval takes 3-5 hours. [01_overview.md#0]",
+      "grounded": true,
+      "expected_no_context": false,
+      "faithfulness": 1.0,
+      "relevance": 0.13953488372093023,
+      "em": 0.0,
+      "f1": 0.0851063829787234,
+      "latency_ms": 0.449,
+      "token_usage_estimate": 958
+    },
+    {
+      "id": "q8",
+      "question": "What is the capital of France?",
+      "k": 5,
+      "retrieved_ids": [
+        "27656b8ddbf9a68f4e1e77d7",
+        "49143dab6e2f659e7c3c98ca",
+        "1525684ffd16e574913de63e",
+        "d54cc8808ce5e51191a742d8",
+        "e93c905813e6685d545ae978"
+      ],
+      "relevant_ids": [],
+      "hit": null,
+      "rr": null,
+      "ndcg": null,
+      "context_precision": null,
+      "answer": "## Data Transfer The first 100 GB of data transferred out to the internet each month is free. [02_pricing.md#0] If an object is missing, check that the request [05_troubleshooting.md#0] ## Core Concepts A **bucket** is the top-level container for objects. [01_overview.md#0]",
+      "grounded": true,
+      "expected_no_context": true,
+      "faithfulness": 1.0,
+      "relevance": 0.08333333333333333,
+      "em": null,
+      "f1": null,
+      "latency_ms": 0.489,
+      "token_usage_estimate": 888
+    }
+  ]
+}

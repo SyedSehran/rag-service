@@ -1,0 +1,50 @@
+[
+  {
+    "id": "q1",
+    "question": "What encryption algorithm does Aster use for objects at rest by default?",
+    "relevant_chunk_ids": ["5dcc7d28216392e4dcd37c33"],
+    "gold_answer": "AES-256"
+  },
+  {
+    "id": "q2",
+    "question": "How much does Infrequent Access storage cost per GB per month?",
+    "relevant_chunk_ids": ["1525684ffd16e574913de63e"],
+    "gold_answer": "$0.0125 per GB per month"
+  },
+  {
+    "id": "q3",
+    "question": "What is the maximum number of parts allowed in a multipart upload?",
+    "relevant_chunk_ids": ["04fe5c88e23c6e6174f82834"],
+    "gold_answer": "10,000 parts"
+  },
+  {
+    "id": "q4",
+    "question": "What should I check if I get a SignatureDoesNotMatch error?",
+    "relevant_chunk_ids": ["49143dab6e2f659e7c3c98ca"],
+    "gold_answer": "Check for an expired/rotated access key or client clock skew greater than 15 minutes from UTC"
+  },
+  {
+    "id": "q5",
+    "question": "How many storage classes does Aster offer and what are they?",
+    "relevant_chunk_ids": ["e93c905813e6685d545ae978"],
+    "gold_answer": "Three: Standard, Infrequent Access, and Archive"
+  },
+  {
+    "id": "q6",
+    "question": "What is the per-bucket PUT request rate limit?",
+    "relevant_chunk_ids": ["5d59e9f6048b274ecf205e84"],
+    "gold_answer": "3,500 PUT/POST/DELETE requests per second"
+  },
+  {
+    "id": "q7",
+    "question": "How long are old access keys valid after rotation?",
+    "relevant_chunk_ids": ["5dcc7d28216392e4dcd37c33"],
+    "gold_answer": "24 hours"
+  },
+  {
+    "id": "q8",
+    "question": "What is the capital of France?",
+    "relevant_chunk_ids": [],
+    "gold_answer": "NO_RELEVANT_CONTEXT"
+  }
+]
